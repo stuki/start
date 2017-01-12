@@ -1,0 +1,83 @@
+<head>
+	<script src="main.js"></script>
+	<style>
+		body {
+			background: #f5f5f5;
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			vertical-align: baseline;
+
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		#container {
+			position: absolute;
+			height: 80%;
+			width: 60%;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background: #f1f1f1;
+			overflow: hidden;
+		}
+
+		#art {
+			position: absolute;
+			height: 70%;
+			width: 70%;
+			top: 30%;
+			left: 50%;
+			transform: translate(-50%, -30%) rotate(-1deg);
+		}
+
+		#art > div {
+			border-color: #151515;
+		}
+
+		#art > div:first-child {
+			margin-left: -25px;
+		}
+
+		#art > div:nth-child(3n+0) {
+			margin-left: -25px;
+		}
+
+		#footer {
+			position: absolute;
+			bottom: 10px;
+			margin: 0 auto;
+			width: 100%;
+			text-align: center;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="art">
+			
+		</div>
+	</div>
+	<div id="footer">
+		<p>>>> <a href="http://twitter.com/stuki">@stuki</a> <<<</p>
+	</div>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			var c = document.getElementById("container")
+ 			c.style.width = (7/10) * c.offsetHeight
+ 			patternGenerator("art")
+
+			document.addEventListener("keydown", function(e) {
+				if (e.keyCode === 32 || e.keyCode === 13) {
+					window.location.href = "http://oscarstorbacka.com/start/";
+				}
+ 			})
+		});
+	</script>
+</body>
